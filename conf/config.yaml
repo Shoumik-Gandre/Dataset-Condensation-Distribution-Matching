@@ -1,0 +1,29 @@
+files:
+  dataset_root: ../datasets/real
+  save_root: ../datasets/synthetic
+
+dcdm:
+  dimensions:
+    - 1
+    - 28
+    - 28
+
+  hyperparams:
+    iterations: 128
+    batch_size: 256
+    lr_dataset: 1.0
+    momentum_dataset: 0.5
+    batchnorm_batchsize_perclass: 16
+    ipc: 10
+
+  eval:
+    num_epochs: 500
+    lr: 0.01
+    batch_size: 256
+
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
+
+device: 'cuda:0'
